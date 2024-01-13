@@ -3,15 +3,19 @@ version: '3'
 services:
   # Serviço para o aplicativo Phoenix
   web:
-    build: .
+    build:
+      context: .
+    command: /bin/sh entrypoint.sh
     ports:
       - "4000:4000"
     depends_on:
       - db
-    env_file:
-      - .env
+    links:
+      - db  
     environment:
       DATABASE_URL: "ecto://postgres:postgres@db/phil_collins_db_dev"
+      MIX_ENV: "prod"
+      SECRET_KEY_BASE: "+C6rOXXAZYE5uUMIsJ75HsXD8rtVrihxJpNoq22E7J4ueqFlvO/5Yzuz81AE60nx"
   db:
     image: postgres:latest
     environment:

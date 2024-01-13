@@ -1,24 +1,21 @@
+# imagem base
+# Alpine é uma imagem mínima do Docker baseada no Alpine Linux com um índice de pacotes completo e apenas 5 MB de tamanho!
 FROM elixir:latest
 
-# envs
-ENV MIX_ENV=prod \
-    APP_NAME=phil_collins_api
-
-# configurar diretório de trabalho
 WORKDIR /app
 
-# dependências
-COPY mix.exs mix.lock ./
-RUN mix do deps.get, deps.compile
+# instalando o gerenciar de pacotes do elixir
+RUN mix local.hex --force && \
+    mix local.rebar --force
 
-# Copiar todo o código
+# também funciona essa sintaxe:
+# RUN mix do local.hex --force, local.rebar --force
+
+# copiar tudo da raiz do projeto para o contêiner docker
 COPY . .
 
-# Compilar
-RUN mix do compile, phx.digest
+# instalar as dependencias
+RUN mix do deps.get, deps.compile, phx.digest
 
-# Expor a porta que o Phoenix vai rodar
-EXPOSE 4000
-
-# Comando para iniciar o aplicativo
-CMD ["mix", "phx.server"]
+# executar o servidor
+CMD ["/app/entrypoint.sh"]
