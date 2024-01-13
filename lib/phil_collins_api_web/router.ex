@@ -5,8 +5,10 @@ defmodule PhilCollinsApiWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", PhilCollinsApiWeb do
+  scope "/api", PhilCollinsApiWeb.Api.V1 do
     pipe_through :api
+
+    get("v1/albums", AlbumController, :index)
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
