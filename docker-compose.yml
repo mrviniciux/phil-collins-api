@@ -1,6 +1,17 @@
 version: '3'
 
 services:
+  # Serviço para o aplicativo Phoenix
+  web:
+    build: .
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: "ecto://postgres:postgres@db/phil_collins_db_dev"
   db:
     image: postgres:latest
     environment:
