@@ -20,6 +20,3 @@ elixir_crash.dump
 # Logs
 log/
 
-# Arquivos compilados
-priv/static/
-priv/repo/migrations/
