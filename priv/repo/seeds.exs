@@ -1,5 +1,5 @@
 alias PhilCollinsApi.Repo
-alias PhilCollinsApi.Api.V1.Album
+alias PhilCollinsApi.Albums.Album
 
 # Limpar todos os registros existentes antes de adicionar novos
 Repo.transaction(fn ->

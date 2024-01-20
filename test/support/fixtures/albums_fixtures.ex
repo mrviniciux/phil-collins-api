@@ -1,9 +1,7 @@
-defmodule PhilCollinsApi.Api.V1Fixtures do
-  alias PhilCollinsApi.Api.V1
-
+defmodule PhilCollinsApi.AlbumsFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `PhilCollinsApi.Api.V1` context.
+  entities via the `PhilCollinsApi.Albums` context.
   """
 
   @doc """
@@ -15,10 +13,10 @@ defmodule PhilCollinsApi.Api.V1Fixtures do
       |> Enum.into(%{
         image: "some image",
         is_lp: true,
-        release_date: ~D[2024-01-12],
+        release_date: ~D[2024-01-19],
         title: "some title"
       })
-      |> V1.create_album()
+      |> PhilCollinsApi.Albums.create_album()
 
     album
   end

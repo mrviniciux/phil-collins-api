@@ -1,6 +1,6 @@
-defmodule PhilCollinsApiWeb.Api.V1.AlbumController do
+defmodule PhilCollinsApiWeb.AlbumController do
   use PhilCollinsApiWeb, :controller
-  alias PhilCollinsApi.Api.V1.Album
+  alias PhilCollinsApi.Albums.Album
   alias PhilCollinsApi.Repo
 
   def index(conn, _params) do

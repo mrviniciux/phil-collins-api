@@ -1,12 +1,12 @@
-defmodule PhilCollinsApi.Api.V1 do
+defmodule PhilCollinsApi.Albums do
   @moduledoc """
-  The Api.V1 context.
+  The Albums context.
   """
 
   import Ecto.Query, warn: false
   alias PhilCollinsApi.Repo
 
-  alias PhilCollinsApi.Api.V1.Album
+  alias PhilCollinsApi.Albums.Album
 
   @doc """
   Returns the list of albums.

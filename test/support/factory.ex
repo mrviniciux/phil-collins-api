@@ -1,7 +1,7 @@
 defmodule Support.Factory do
   use ExMachina.Ecto, repo: PhilCollinsApi.Repo
 
-  alias PhilCollinsApi.Api.V1.Album
+  alias PhilCollinsApi.Albums.Album
 
   def album_factory do
     %Album{

@@ -1,6 +1,5 @@
-defmodule PhilCollinsApi.Api.V1.Album do
+defmodule PhilCollinsApi.Albums.Album do
   use Ecto.Schema
-  import Ecto.Query, warn: false
   import Ecto.Changeset
 
   schema "albums" do
@@ -15,7 +14,7 @@ defmodule PhilCollinsApi.Api.V1.Album do
   @doc false
   def changeset(album, attrs) do
     album
-    |> cast(attrs, [:title, :release_date, :is_lp, :image])
-    |> validate_required([:title, :release_date, :is_lp, :image])
+    |> cast(attrs, [:title, :image, :release_date, :is_lp])
+    |> validate_required([:title, :image, :release_date, :is_lp])
   end
 end
