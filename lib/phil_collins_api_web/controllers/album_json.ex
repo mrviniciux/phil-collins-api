@@ -1,5 +1,5 @@
-defmodule PhilCollinsApiWeb.Api.V1.AlbumJSON do
-  alias PhilCollinsApi.Api.V1.Album
+defmodule PhilCollinsApiWeb.AlbumJSON do
+  alias PhilCollinsApi.Albums.Album
 
   defp data(%Album{} = album) do
     %{

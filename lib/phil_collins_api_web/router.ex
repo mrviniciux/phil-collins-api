@@ -5,7 +5,7 @@ defmodule PhilCollinsApiWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", PhilCollinsApiWeb.Api.V1 do
+  scope "/api", PhilCollinsApiWeb do
     pipe_through :api
 
     get("v1/albums", AlbumController, :index)
