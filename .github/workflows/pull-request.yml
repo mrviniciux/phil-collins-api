@@ -32,7 +32,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build Docker image
-      run: docker build -t your-elixir-app .
+      run: docker build -t phil-collins-api .
 
     - name: Run tests
-      run: docker run --rm your-elixir-app mix test
+      run: docker run --rm phil-collins-api mix test
