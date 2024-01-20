@@ -13,9 +13,9 @@ services:
     links:
       - db  
     environment:
-      DATABASE_URL: "ecto://postgres:postgres@db/phil_collins_db_dev"
+      DATABASE_URL: ${DATABASE_URL}
       MIX_ENV: "prod"
-      SECRET_KEY_BASE: "+C6rOXXAZYE5uUMIsJ75HsXD8rtVrihxJpNoq22E7J4ueqFlvO/5Yzuz81AE60nx"
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
   db:
     image: postgres:latest
     environment:
