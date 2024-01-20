@@ -28,6 +28,7 @@ defmodule PhilCollinsApiWeb.ConnCase do
       import Plug.Conn
       import Phoenix.ConnTest
       import PhilCollinsApiWeb.ConnCase
+      import Support.Factory
     end
   end
 
