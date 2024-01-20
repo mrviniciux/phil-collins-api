@@ -1,5 +1,6 @@
 defmodule PhilCollinsApi.Api.V1Fixtures do
   alias PhilCollinsApi.Api.V1
+
   @moduledoc """
   This module defines test helpers for creating
   entities via the `PhilCollinsApi.Api.V1` context.
