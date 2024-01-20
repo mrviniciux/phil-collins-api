@@ -6,7 +6,7 @@ defmodule PhilCollinsApiWeb.Api.V1.AlbumJSON do
       title: album.title,
       image: album.image,
       release_date: album.release_date,
-      is_lp: album.is_lp,
+      is_lp: album.is_lp
     }
   end
 
@@ -16,5 +16,4 @@ defmodule PhilCollinsApiWeb.Api.V1.AlbumJSON do
   def index(%{albums: albums}) do
     %{data: for(album <- albums, do: data(album))}
   end
-
 end

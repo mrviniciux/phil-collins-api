@@ -1,4 +1,6 @@
 defmodule PhilCollinsApi.Api.V1Fixtures do
+  alias PhilCollinsApi.Api.V1
+
   @moduledoc """
   This module defines test helpers for creating
   entities via the `PhilCollinsApi.Api.V1` context.
@@ -16,7 +18,7 @@ defmodule PhilCollinsApi.Api.V1Fixtures do
         release_date: ~D[2024-01-12],
         title: "some title"
       })
-      |> PhilCollinsApi.Api.V1.create_album()
+      |> V1.create_album()
 
     album
   end
