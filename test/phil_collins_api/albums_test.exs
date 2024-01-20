@@ -21,7 +21,12 @@ defmodule PhilCollinsApi.AlbumsTest do
     end
 
     test "create_album/1 with valid data creates a album" do
-      valid_attrs = %{title: "some title", image: "some image", release_date: ~D[2024-01-19], is_lp: true}
+      valid_attrs = %{
+        title: "some title",
+        image: "some image",
+        release_date: ~D[2024-01-19],
+        is_lp: true
+      }
 
       assert {:ok, %Album{} = album} = Albums.create_album(valid_attrs)
       assert album.title == "some title"
@@ -36,7 +41,13 @@ defmodule PhilCollinsApi.AlbumsTest do
 
     test "update_album/2 with valid data updates the album" do
       album = album_fixture()
-      update_attrs = %{title: "some updated title", image: "some updated image", release_date: ~D[2024-01-20], is_lp: false}
+
+      update_attrs = %{
+        title: "some updated title",
+        image: "some updated image",
+        release_date: ~D[2024-01-20],
+        is_lp: false
+      }
 
       assert {:ok, %Album{} = album} = Albums.update_album(album, update_attrs)
       assert album.title == "some updated title"
