@@ -13,17 +13,17 @@ services:
     links:
       - db  
     environment:
-      DATABASE_URL: "ecto://postgres:postgres@db/phil_collins_db_dev"
+      DATABASE_URL: ${DATABASE_URL}
       MIX_ENV: "prod"
-      SECRET_KEY_BASE: "+C6rOXXAZYE5uUMIsJ75HsXD8rtVrihxJpNoq22E7J4ueqFlvO/5Yzuz81AE60nx"
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
   db:
     image: postgres:latest
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: phil_collins_db_dev
-      POSTGRES_HOST_AUTH_METHOD: "trust"
-      POSTGRES_HOST: "host.docker.internal"
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_HOST_AUTH_METHOD: ${POSTGRES_HOST_AUTH_METHOD}
+      POSTGRES_HOST: ${POSTGRES_HOST}
     ports:
       - "5432:5432"
     volumes:
